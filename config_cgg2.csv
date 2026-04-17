@@ -1,8 +1,5 @@
+
 # type (r;w;u;1-9),class,name,comment,QQ,ZZ,PBSB,ID,field1,part (m;s),type / templates,divider / values,unit,comment
-# Wolf CGG-2 gas condensing boiler with BM control module
-# Tested with ebusd v26, Wolf CGG-2-18, Kromschroeder SW=0204
-# Bus layout: FA=ZZ08 (QQ=03), BM=ZZ35 (QQ=30), Funk-Empfaenger=ZZ0a (QQ=0f)
-# Note: temp_return has no sensor in CGG-2 hardware (always returns 0x7FFF)
 r,feuerung,temp_burner,Kesseltemperatur,,08,5022,CC0D00,,,UIN,10,°C,Kesseltemperatur
 r,feuerung,performance_burner,Geraeteleistung,,08,5022,CC6F01,,,UCH,,%,Geraeteleistung
 r,feuerung,performance_pump,Drehzahl Pumpe,,08,5022,CC5727,,,UCH,,%,Drehzahl Pumpe
