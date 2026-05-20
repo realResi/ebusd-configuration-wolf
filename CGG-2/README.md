@@ -1,12 +1,10 @@
+[README_puni2k.md](https://github.com/user-attachments/files/28066771/README_puni2k.md)
 # Wolf CGG-2 ebusd Configuration
 
 ebusd configuration for the **Wolf CGG-2** gas condensing boiler with **Wolf BM** control module.
 
 Tested with:
 - Wolf CGG-2-18 (Feuerungsautomat: Kromschröder, SW=0204)
-- Wolf BM (Master=0x30, Slave=0x35, SW=0204)
-- Wolf Funk-Empfänger (Master=0x0f, Slave=0x0a)
-- ebusd v26.1.6
 
 ---
 
@@ -43,19 +41,19 @@ All HG parameters support read (`r`) and write (`w`). Write uses PBSB=5023 with 
 
 | Parameter | Description | Range |
 |---|---|---|
-| HG01 | Burner differential | 5–30 K |
+| HG01 | Burner differential | 5–25 K |
 | HG06 | Pump mode | 0–2 |
 | HG07 | Pump run-on time | 0–30 min |
 | HG08 | Max flow temperature | 40–90 °C |
 | HG09 | Burner lockout time | 1–30 min |
 | HG10 | eBUS address | — |
-| HG11 | DHW quick start | °C |
+| HG11 | DHW quick start | 10–60 °C |
 | HG12 | Gas type | — |
 | HG13 | Input E1 function | 0–11 |
-| HG15 | DHW hysteresis | 1–30 °C |
+| HG15 | DHW hysteresis | 1–30 K |
 | HG16 | Min pump speed HC | 20–100 % |
 | HG17 | Max pump speed HC | 20–100 % |
-| HG21 | Min boiler temp (corrosion protection) | **do not set below 40°C** |
+| HG21 | Min boiler temp (corrosion protection) | 20–60 °C (**>40°C strongly recommended**) |
 | HG22 | Max boiler temp | °C |
 | HG74 | Fan speed | U/sec |
 | HG75 | DHW flow rate | l/min |
@@ -87,7 +85,5 @@ address 35: slave  MF=Kromschroeder  SW=0204  (BM slave)
 
 ## References
 
-- [ebusd](https://github.com/john30/ebusd)
-- [ebusd Discussion #779](https://github.com/john30/ebusd/discussions/779) — Wolf hardware collection (incl. CGG-2 broadcast decoding)
-- [ism7mqtt](https://github.com/zivillian/ism7mqtt) — Wolf SmartSet parameter extraction
-- FHEM forum topic 95173 — Wolf CGG-2 eBUS findings
+- [ism7mqtt](https://github.com/zivillian/ism7mqtt) — Wolf SmartSet parameter extraction (TelegramNr mapping)
+- FHEM forum topic 95173 — early Wolf CGG-2 eBUS findings
